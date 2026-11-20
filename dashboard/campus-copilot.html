@@ -301,3 +301,82 @@ table.tbl tr:last-child td{border-bottom:0}
 #copi .heart{position:absolute;pointer-events:none;font-size:16px;animation:float 1s ease-out forwards}
 @keyframes float{to{transform:translateY(-46px) scale(1.3);opacity:0}}
 @media (max-width:860px){#copi{bottom:92px;right:14px}#copi .pet{width:66px;height:66px;border-radius:18px}}
+
+/* ---------- Top tasks today ---------- */
+.prio{margin-top:22px;padding:22px 22px 10px;background:linear-gradient(120deg,#fff 55%,#fff4ec);border-color:var(--orline)}
+.prio .card-h h2{display:flex;align-items:center;gap:10px}
+.prio .pmeter{font-size:12.5px;color:var(--muted);line-height:1.4;white-space:nowrap}
+.prio .pbar{height:6px;border-radius:9px;background:#efe9e2;overflow:hidden;margin:4px 0 6px auto;width:170px}
+.prio .pbar i{display:block;height:100%;background:var(--or);border-radius:9px;transition:width .35s}
+.task{display:flex;align-items:center;gap:14px;padding:13px 4px;border-top:1px solid var(--line2)}
+.task:first-of-type{border-top:0}
+.task .rank{font-family:var(--display);font-weight:800;font-size:22px;color:var(--or);width:26px;text-align:center}
+.task .ck{width:24px;height:24px;border-radius:8px;border:1.8px solid #cfcac2;background:#fff;cursor:pointer;display:grid;place-items:center;flex:none;transition:.15s}
+.task .ck:hover{border-color:var(--or)}
+.task.done .ck{background:var(--or);border-color:var(--or)}
+.task.done .ck::after{content:'';width:9px;height:5px;border:2.4px solid #fff;border-top:0;border-right:0;transform:rotate(-45deg) translate(1px,-1px)}
+.task .tt{flex:1;min-width:0}
+.task .tt b{display:block}
+.task.done .tt b{text-decoration:line-through;color:var(--muted)}
+.task.done .rank{color:#d6d1ca}
+.task .tag{font-size:11.5px;font-weight:700;padding:3px 9px;border-radius:99px;white-space:nowrap}
+.tag.urg{background:var(--warnsoft);color:var(--warn)}.tag.soon{background:var(--ambersoft);color:var(--amber)}.tag.exam{background:var(--orsoft);color:#c2410c}.tag.fix{background:#eef0ff;color:#3b45a8}.tag.car{background:var(--greensoft);color:var(--green)}
+.task .mins{font-size:12px;color:var(--muted);width:52px;text-align:right}
+
+/* ---------- Grok Bot chat ---------- */
+#chat{position:fixed;right:22px;bottom:122px;z-index:61;width:370px;max-width:calc(100vw - 28px);height:520px;max-height:calc(100vh - 150px);background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:0 30px 70px -30px rgba(0,0,0,.45);display:flex;flex-direction:column;overflow:hidden;opacity:0;transform:translateY(14px) scale(.97);transform-origin:bottom right;pointer-events:none;transition:.22s ease}
+#chat.open{opacity:1;transform:none;pointer-events:auto}
+#chat .ch{display:flex;align-items:center;gap:10px;padding:14px 16px;border-bottom:1px solid var(--line2);background:linear-gradient(120deg,#fff 50%,#fff4ec)}
+#chat .ch b{display:block;font-size:14.5px}
+#chat .ch small{color:var(--muted);font-size:12px;display:flex;align-items:center;gap:5px}
+#chat .ch small i{width:7px;height:7px;border-radius:50%;background:#22c55e;display:inline-block}
+#chat .x{margin-left:auto;border:0;background:var(--line2);width:30px;height:30px;border-radius:10px;cursor:pointer;font-size:16px;color:var(--ink2)}
+#chat .msgs{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;background:#fcfbf9}
+.m{max-width:84%;padding:10px 13px;border-radius:16px;font-size:14px;line-height:1.45}
+.m.bot{background:#fff;border:1px solid var(--line);border-bottom-left-radius:5px;align-self:flex-start}
+.m.me{background:var(--or);color:#fff;border-bottom-right-radius:5px;align-self:flex-end}
+.m ul{margin:6px 0 0;padding-left:18px}.m li{margin:2px 0}
+.m .go{margin-top:8px;display:inline-block;font-size:12.5px;font-weight:600;color:#c2410c;cursor:pointer;border:1px solid var(--orline);background:var(--orsoft);padding:4px 10px;border-radius:99px}
+.typing{display:flex;gap:4px;padding:12px 14px}
+.typing i{width:6px;height:6px;border-radius:50%;background:#c9c4bc;animation:tp 1s infinite}
+.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+@keyframes tp{0%,60%,100%{transform:translateY(0);opacity:.5}30%{transform:translateY(-4px);opacity:1}}
+#chat .quick{display:flex;gap:6px;overflow-x:auto;padding:10px 12px 0;scrollbar-width:none}
+#chat .quick button{flex:none;border:1px solid var(--line);background:#fff;border-radius:99px;padding:6px 11px;font-size:12.5px;cursor:pointer;color:var(--ink2)}
+#chat .quick button:hover{border-color:var(--or);color:#c2410c}
+#chat form{display:flex;gap:8px;padding:10px 12px 12px}
+#chat input{flex:1;border:1px solid var(--line);border-radius:14px;padding:11px 13px;font:inherit;font-size:14px;outline:none}
+#chat input:focus{border-color:var(--or);box-shadow:0 0 0 3px var(--orsoft)}
+#chat form button{border:0;background:var(--ink);color:#fff;border-radius:14px;width:44px;cursor:pointer;font-size:17px}
+@media (max-width:860px){#chat{right:14px;bottom:170px;height:460px}}
+</style>
+</head>
+<body>
+<div class="glow"></div>
+<div class="app">
+  <aside class="side">
+    <div class="brand" id="brand"></div>
+    <nav class="nav" id="nav"></nav>
+    <div class="foot" id="sidefoot"></div>
+  </aside>
+  <main id="view"></main>
+</div>
+<nav class="tabbar" id="tabbar"></nav>
+<div id="modal"></div>
+<div id="toast"></div>
+<div id="chat" role="dialog" aria-label="Grok Bot chat"><div class="ch"><span id="chatAv"></span><div><b>Grok Bot</b><small><i></i>Copi mode · knows your hub</small></div><button class="x" id="chatX" aria-label="Close">×</button></div>
+<div class="msgs" id="msgs"></div>
+<div class="quick" id="quick"><button>What should I do first?</button><button>What's due this week?</button><button>Quiz me</button><button>How ready am I for the exam?</button><button>Job matches</button></div>
+<form id="chatF"><input id="chatI" placeholder="Ask Grok Bot anything…" autocomplete="off"><button aria-label="Send">↑</button></form></div>
+<div id="copi"><div class="bubble" id="copiBubble"></div><button class="pet" id="copiPet" aria-label="Copi, your study buddy"><svg viewBox="0 0 100 100" width="62" height="62"><g class="body"><path id="copiShape" fill="#F2783A"/><g class="pupils" id="copiEyes"><rect class="eye" x="40" y="37" width="6" height="14" rx="3" fill="#fff" transform="rotate(-18 43 44)"/><rect class="eye" x="55" y="35" width="6" height="14" rx="3" fill="#fff" transform="rotate(-18 58 42)"/></g></g></svg></button></div>
+
+<div id="print"></div>
+
+<script>
+/* ============================================================
+   Campus Copilot — clickable prototype (demo data, no backend)
+   Mirrors the concept doc: attempt-first review, assistance-aware
+   progress, approval list -> .ics, routines that run while away.
+   ============================================================ */
+const KEY='campus-copilot-proto', VER=3;
+const $=s=>document.querySelector(s);
