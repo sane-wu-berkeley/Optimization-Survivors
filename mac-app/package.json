@@ -1,0 +1,46 @@
+{
+  "name": "campus-copilot",
+  "productName": "Campus Copilot",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Campus Copilot, a local macOS Electron wrapper for a student's term dashboard with Google Drive sync and two-way JSON chat.",
+  "main": "src/main.js",
+  "author": "Campus Copilot",
+  "scripts": {
+    "start": "electron .",
+    "build:mac": "electron-builder --mac zip --arm64 --x64",
+    "build:mac:arm64": "electron-builder --mac zip --arm64",
+    "build:mac:x64": "electron-builder --mac zip --x64"
+  },
+  "devDependencies": {
+    "electron": "^33.4.11",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "app.campuscopilot.desktop",
+    "productName": "Campus Copilot",
+    "directories": {
+      "buildResources": "build",
+      "output": "dist"
+    },
+    "files": [
+      "src/**/*",
+      "dashboard/**/*",
+      "package.json"
+    ],
+    "mac": {
+      "category": "public.app-category.education",
+      "icon": "build/icon.icns",
+      "identity": null,
+      "target": [
+        {
+          "target": "zip",
+          "arch": [
+            "arm64",
+            "x64"
+          ]
+        }
+      ]
+    }
+  }
+}
